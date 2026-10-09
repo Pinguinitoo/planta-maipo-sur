@@ -7,7 +7,7 @@ jobs:
       - name: Descargar repositorio
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Buscar secretos
         uses: gitleaks/gitleaks-action@v2
         env:
