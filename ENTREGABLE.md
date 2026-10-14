@@ -1,5 +1,3 @@
-<img width="1108" height="304" alt="ENTREGABLE" src="https://github.com/user-attachments/assets/89b12381-7b1f-4aa7-bc5b-63907da5e41d" />
-
 ## Hallazgo y desición
 Hallazgo: Gitleaks detectó una credencial de fábrica expuesta en el historial de commits del archivo config-yaml (Linea 1).
 Gravedad: Alta.
@@ -13,3 +11,17 @@ Responsable y fecha: Matias Sepúlveda, 09-10-2026.
 2. **Modificación no autorizada de parámetros:** Manipulación (Tampering). Una alteración de los parámetros del PLC podría provocar una dosificación incorrecta de cloro. Control: validación de parámetros y control de cambios.
 
 3. **Interrupción de comunicación HMI-PLC:** Denegación de servicio (DoS). El operador podría perder temporalmente la supervisión del proceso. Control: monitoreo, alertas y medidas de continuidad operacional.
+
+## Diagrama del sistema
+
+```mermaid
+flowchart TD
+    A["Persona operadora"]
+    B["Servicio / HMI"]
+    C["Controlador PLC - dosificacion de cloro simulada"]
+
+    A -->|Envia ordenes| B
+    B -->|Muestra informacion| A
+    B -->|Envia parametros| C
+    C -->|Devuelve lecturas y estado| B
+```
