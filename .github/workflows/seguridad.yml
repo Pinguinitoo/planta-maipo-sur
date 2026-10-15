@@ -21,3 +21,10 @@ jobs:
           PLC_PASSWORD: ${{ secrets.PLC_PASSWORD }}
         run: python scripts/prueba_funcional.py
 
+      - name: Instalar Semgrep
+        run: pip install semgrep
+
+      - name: Revisar codigo propio
+        run: semgrep scan --config .semgrep.yml --error .
+
+
