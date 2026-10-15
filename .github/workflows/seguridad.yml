@@ -47,3 +47,20 @@ jobs:
           else
             echo "Sin dependencias Python externas declaradas"
           fi
+          
+      - name: Generar SBOM con Trivy
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          scan-type: fs
+          scan-ref: .
+          format: cyclonedx
+          output: sbom.cdx.json
+          version: v0.75.0
+
+      - name: Guardar SBOM como evidencia
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-planta-maipo-sur
+          path: sbom.cdx.json
+          if-no-files-found: error
+
