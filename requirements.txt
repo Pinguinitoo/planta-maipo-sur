@@ -1,0 +1,3 @@
+# Dependencias Python del simulador Planta Maipo Sur
+# Actualmente no se requieren paquetes externos.
+# El simulador utiliza únicamente la biblioteca estándar de Python.
