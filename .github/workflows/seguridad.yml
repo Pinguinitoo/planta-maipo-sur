@@ -26,5 +26,15 @@ jobs:
 
       - name: Revisar codigo propio
         run: semgrep scan --config .semgrep.yml --error .
-
+        
+      
+      - name: Revisar infraestructura con Trivy
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          scan-type: config
+          scan-ref: infra/
+          format: table
+          exit-code: '1'
+          severity: HIGH,CRITICAL
+          version: v0.75.0
 
