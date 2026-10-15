@@ -36,7 +36,7 @@ Responsable y fecha: Matias Sepúlveda, 09-10-2026.
 - Roles:
 - Matías Sepúlveda — Desarrollador y encargado DevSecOps.
 - Vicente Cosio — Analista de ciberseguridad.
-- Nombre compañera — Encargado de documentación y QA.
+- Danae Gallegos — Encargado de documentación y QA.
 
 ## Controles ejecutados
 
