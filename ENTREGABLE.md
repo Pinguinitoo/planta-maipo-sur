@@ -33,7 +33,10 @@ Responsable y fecha: Matias Sepúlveda, 09-10-2026.
 - Sector: Agua potable.
 - Nombre: Planta Maipo Sur (laboratorio simulado).
 - Sistema: Lectura y supervisión ficticia de cloro mediante HMI y PLC.
-- Roles: Equipo de desarrollo, revisión de seguridad y operación simulada.
+- Roles:
+- Matías Sepúlveda — Desarrollador y encargado DevSecOps.
+- Vicente Cosio — Analista de ciberseguridad.
+- Nombre compañera — Encargado de documentación y QA.
 
 ## Controles ejecutados
 
@@ -99,3 +102,22 @@ Semgrep detectó 2 hallazgos bloqueantes en el parche y el workflow terminó con
 
 - SBOM:
   Artefacto `sbom-planta-maipo-sur` disponible en GitHub Actions.
+
+## Reproducción de los controles
+
+Para ejecutar nuevamente los análisis:
+
+1. Ingresar al repositorio de Planta Maipo Sur.
+2. Seleccionar la pestaña Actions.
+3. Abrir el workflow `seguridad-planta`.
+4. Seleccionar `Run workflow`, elegir la rama `main` y ejecutar.
+5. Revisar los resultados de Gitleaks, Semgrep, Trivy y la prueba funcional.
+6. Descargar el artefacto `sbom-planta-maipo-sur` si se requiere el inventario de componentes.
+7. Revisar el workflow `osv-scanner-planta` para consultar el análisis de dependencias.
+
+Enlace:
+https://github.com/Pinguinitoo/planta-maipo-sur/actions
+
+## Explicación del riesgo para la persona operadora
+
+El parche de IA podría permitir que una entrada no confiable ejecute comandos o que se envíe información a un destino no autorizado, comprometiendo la supervisión de la planta. En un sistema real, esto podría afectar la confiabilidad de las lecturas y las decisiones relacionadas con la dosificación de cloro.
