@@ -37,4 +37,13 @@ jobs:
           exit-code: '1'
           severity: HIGH,CRITICAL
           version: v0.75.0
-
+          
+      - name: Comprobar dependencias Python
+        run: |
+          echo "Revisando requirements.txt"
+          if grep -Eq '^[[:space:]]*[^#[:space:]]' requirements.txt; then
+            echo "Hay dependencias declaradas que requieren auditoria"
+            exit 1
+          else
+            echo "Sin dependencias Python externas declaradas"
+          fi
