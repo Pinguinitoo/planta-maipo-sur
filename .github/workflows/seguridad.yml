@@ -14,3 +14,10 @@ jobs:
         uses: gitleaks/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Prueba funcional
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+          PLC_PASSWORD: ${{ secrets.PLC_PASSWORD }}
+        run: python scripts/prueba_funcional.py
+
