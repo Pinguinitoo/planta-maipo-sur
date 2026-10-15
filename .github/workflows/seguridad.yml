@@ -1,5 +1,7 @@
 name: seguridad-planta
 on: [push, workflow_dispatch]
+permissions:
+  contents: read
 jobs:
   buscar-secretos:
     runs-on: ubuntu-latest
